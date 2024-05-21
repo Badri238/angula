@@ -1,0 +1,16 @@
+<p [ngClass]="style">{{title}}</p>
+<input type="text" [(ngModel)]="word">
+<p>{{word}}</p>
+<div *ngIf="flag">
+  <app-child [name]="title" (valToParent)="getData($event)"></app-child>
+</div>
+<button (click)="changeFlag()">Show</button>
+<div *ngFor="let a of arr">
+<p>{{a}}</p>
+</div>
+
+<div #wrapper>
+  <ng-content>
+    
+  </ng-content>
+</div>
